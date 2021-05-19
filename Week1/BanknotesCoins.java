@@ -6,7 +6,7 @@ java Banknotes_Coins
 
 import java.util.Scanner;
 
-public class Banknotes_Coins {
+public class BanknotesCoins {
   private static int notes;
  private  static int coins;
     public static void main(String[] args) {
