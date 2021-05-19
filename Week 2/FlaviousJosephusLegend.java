@@ -1,9 +1,9 @@
 /*
-javac -d . *.java
-
-java Flavious_Josephus_Legend
-
-*/
+ *javac -d . *.java
+ *
+ *java Flavious_Josephus_Legend
+ *
+ */
 
 import java.util.Scanner;
 
