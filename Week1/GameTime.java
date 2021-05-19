@@ -1,14 +1,13 @@
-/*javac -d . *.java
-
-java Game_Time
-
-*/
-
-
+/*
+ *javac -d . *.java
+ *
+ *java Game_Time
+ *
+ */
 
 import java.util.Scanner; 
 
-public class Game_Time{
+public class GameTime {
    public static void main(String[] args) {
 	Scanner scanner = new Scanner(System.in);
 
@@ -20,14 +19,15 @@ public class Game_Time{
 	int endHour = Integer.parseInt(array[2]);
 	int endMinute = Integer.parseInt(array[3]);
 
-	if(endMinute < startMinute){
+	if(endMinute < startMinute) {
 	    endHour--;
-	    endMinute += 60;
+	    endMinute + = 60;
 	}	
 	int resultMinute = endMinute - startMinute;
 	
-	if(endHour < startHour || (endHour == startHour && resultMinute < 1))
-	    endHour += 24;                     
+	if(endHour < startHour || ((endHour == startHour) && (resultMinute < 1))) {
+	    endHour += 24; 
+	}
 	int resultHour = endHour - startHour;                                                 
 
 	System.out.println("O JOGO DUROU " + resultHour + " HORA(S) E " + resultMinute + " MINUTO(S)");    
