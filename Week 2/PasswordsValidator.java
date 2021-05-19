@@ -1,25 +1,22 @@
-/*javac -d . *.java
-
-java Passwords_Validator
-
-*/
-
-
+/*
+ *javac -d . *.java
+ *
+ *java Passwords_Validator
+ *
+ */
 import java.util.Scanner;
 
-public class Passwords_Validator {
+public class PasswordsValidator {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         while( scanner.hasNextLine()){
 	    String text = scanner.nextLine();
+	    boolean Uppercase = false;  
+	    boolean Lowercase = false; 
+	    boolean Numbers = false;
 
-	boolean Uppercase = false;  
-	boolean Lowercase = false; 
-	boolean Numbers = false;
-	
-
-        for(int i = 0; i < text.length(); i ++){
-	    if( Character.isDigit(text.charAt(i)) ){
+        for(int i = 0; i < text.length(); i++){
+	    if( Character.isDigit(text.charAt(i))){
 		if(!Numbers)
 		    Numbers = true;
 		    continue;
