@@ -1,13 +1,13 @@
 /*
  *javac -d . *.java
  *
- *java Weighted_Averages
+ *java WeightedAverages
  *
  */
 
 import java.util.Scanner;
 
-public class Weighted_Averages{
+public class WeightedAverages{
     public static void main(String[] args){
       Scanner scanner = new Scanner(System.in);
       int N = Integer.parseInt(scanner.nextLine());
