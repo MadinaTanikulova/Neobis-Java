@@ -1,5 +1,5 @@
-
-/*javac -d . *.java
+/*
+javac -d . *.java
 
 java Flavious_Josephus_Legend
 
@@ -7,7 +7,7 @@ java Flavious_Josephus_Legend
 
 import java.util.Scanner;
 
-public class Flavious_Josephus_Legend {
+public class FlaviousJosephusLegend {
     public static void main(String[] args)  {
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
@@ -20,9 +20,8 @@ public class Flavious_Josephus_Legend {
     }
     public static int Result(int x, int y) {
         int result = 0;
-
         for (int i = 2; i <= x; i++)
             result= (result + y) % i;
-
-        return result; }
+        return result;
+    }
 }
