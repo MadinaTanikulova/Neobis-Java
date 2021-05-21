@@ -1,0 +1,3 @@
+select name,
+(select name from providers where id_providers=providers.id)from products
+where id_categories=6;
