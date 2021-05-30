@@ -1,63 +1,63 @@
-drop database Shop;
-create database Shop;
-use Shop;
+DROP DATABASE Shop;
+CREATE DATABASE Shop;
+USE Shop;
 
-create table SunglassesShop (
-	Id  int,
-	Article int,
-	Color varchar(50) not null,
-	Brand varchar(50) not null,
-	Manufacturer varchar(50) not null,
-	Price INT not null
+CREATE TABLE SunglassesShop (
+	id INT,
+	article INT,
+	color VARCHAR(50) NOT NULL,
+	brand  VARCHAR(50) NOT NULL,
+	manufacturer VARCHAR(50) NOT NULL,
+	price INT NOT NULL
 );
 
-create table Customers(
-      Id int ,
-	 Name_Surname varchar(50),
-	  Gender varchar(50),
-	  Address varchar(100),
-	   PhoneNumber varchar(30)
+CREATE TABLE Customers(
+         id INT ,
+	 name_surname VARCHAR(50),
+	 gender VARCHAR(50),
+	 address VARCHAR(100),
+	 phoneNumber VARCHAR(30)
 );
  
-create table Orders(
-       Id int ,
-	   Status varchar(30),
-	  order_customer int,
-	   order_sunglass int
+CREATE TABLE Orders(
+       id INT,
+       status VARCHAR(30),
+       order_customer INT,
+       order_sunglass INT
 );
 
 ALTER TABLE SunglassesShop
-MODIFY COLUMN id INT auto_increment primary key;
+MODIFY COLUMN id INT AUTO_INCREMENT PRIMARY KEY;
 
 ALTER TABLE Customers
-MODIFY COLUMN id INT auto_increment primary key;
+MODIFY COLUMN id INT AUTO_INCREMENT PRIMARY KEY;
 
 ALTER TABLE Orders
-MODIFY COLUMN id INT auto_increment primary key;
+MODIFY COLUMN id INT AUTO_INCREMENT PRIMARY KEY;
 
 ALTER TABLE Orders
-ADD (foreign key(order_customer) references Customers(Id),
-  foreign key(order_sunglass) references SunglassesShop(Id));
+ADD (FOREIGN KEY(order_customer) REFERENCES Customers(id),
+  FOREIGN KEY(order_sunglass)  REFERENCES  SunglassesShop(id));
 
 
-insert into SunglassesShop 
-values (1,1254,"Black","Ray Ban","China",450),
-(2,1255,"Gold","Ciosako","China",400),
-(3,1256,"Brown","Armani","China",850),
-(4,1257,"Black","Xiomai","China",350),
-(5,1259,"White","Porsh","China",1000),
-(6,1260,"Red","Dior","China",580);
+INSERT INTO SunglassesShop 
+VALUES (1, 1254, "Black", "Ray Ban", "China", 450),
+(2, 1255, "Gold", "Ciosako", "China", 400),
+(3, 1256, "Brown", "Armani", "China", 850),
+(4, 1257, "Black", "Xiomai", "China", 350),
+(5, 1259, "White", "Porsh", "China", 1000),
+(6, 1260, "Red", "Dior", "China", 580);
 
-insert into Customers 
-values (1,"Arsen Abylov","male","Kasymbekov street 48","0550147895"),
-(2,"Ayperi Kadyrbekova","female","Lenin street 122","0550147895"),
-(3,"Zeynep Sultanova","female","Ahunbeva street 237","0550147895"),
-(4,"Ayana Muhammedova","female","Gagarina street 25","0550147895"),
-(5,"Rysbek Almazbeov","male","Ayni street 112","0550147895");
+INSERT INTO Customers 
+VALUES (1, "Arsen Abylov","male", "Kasymbekov street 48", "0550147895"),
+(2, "Ayperi Kadyrbekova", "female", "Lenin street 122", "0550147895"),
+(3, "Zeynep Sultanova", "female", "Ahunbeva street 237", "0550147895"),
+(4, "Ayana Muhammedova", "female", "Gagarina street 25", "0550147895"),
+(5, "Rysbek Almazbeov", "male", "Ayni street 112", "0550147895");
 
-insert into Orders 
-values(1,"Recieved",1,4),
-(2,"Not verifed",4,6),
-(3,"Sent",5,5),
-(4,"Verifed",2,2),
-(5,"Processed",3,1);
+INSERT INTO Orders 
+VALUES (1, "Recieved", 1, 4),
+(2, "Not verifed", 4, 6),
+(3, "Sent", 5, 5),
+(4, "Verifed", 2, 2),
+(5, "Processed", 3, 1);
