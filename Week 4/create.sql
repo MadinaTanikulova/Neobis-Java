@@ -26,6 +26,20 @@ create table Orders(
 	   order_sunglass int
 );
 
+ALTER TABLE SunglassesShop
+MODIFY COLUMN id INT auto_increment primary key;
+
+ALTER TABLE Customers
+MODIFY COLUMN id INT auto_increment primary key;
+
+ALTER TABLE Orders
+MODIFY COLUMN id INT auto_increment primary key;
+
+ALTER TABLE Orders
+ADD (foreign key(order_customer) references Customers(Id),
+  foreign key(order_sunglass) references SunglassesShop(Id));
+
+
 insert into SunglassesShop 
 values (1,1254,"Black","Ray Ban","China",450),
 (2,1255,"Gold","Ciosako","China",400),
