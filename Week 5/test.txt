@@ -1,0 +1,53 @@
+                             Main2.java 
+JDBC API, которая хранит интерфейсы и классы :
+mport java.sql.Connection;
+import java.sql.Statement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.DriverManager;
+
+Подключается к базе данных и возвращает объект connection:
+
+private static Connection getConnection(){}
+
+
+Методы :
+1) private  static void updateCustomers(){}
+Update - по id меняет имя покупателя
+По id=1 поменяется имя с "Arsen Tursunbaev"->"Arsen Amatov"
+
+
+2)public static void deleteCustomerById(){}
+Удаляет запись из таблицы "customers" по id
+Где id =6 удалит эту строку из таблицы
+
+3)public static void addNewCustomer() {}
+Данный метод додавляет 2 новые записи в таблицу "customers"
+(6,'Aynagul Osmonova','female','Ahunbaeva 44434','0557854789'),
+(7,'Bektur Usenov','male','Lenina 56','0770214563')
+
+
+
+4) private static void selectAllFrom() {}
+Выводит все данные из базы данных на консоль
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
