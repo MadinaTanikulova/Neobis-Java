@@ -52,14 +52,10 @@ public class Main2 {
                 e.printStackTrace();
             } finally {
                 try {
-                    statement.close();
+                    if (statement != null) statement.close();
+                    if (connection != null) connection.close();
                 } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
+                     e.getStackTrace();
                 }
             }
         }
@@ -75,21 +71,16 @@ public class Main2 {
 
             try {
                 statement = connection.createStatement() ;
-                int rowsDelete = statement.executeUpdate("DELETE FROM customers WHERE Id = 6");
+                int rowsDelete = statement.executeUpdate("DELETE FROM customers WHERE Id = 7");
                 System.out.printf("%d row(s) deleted\n", rowsDelete);
-
             } catch (SQLException e) {
                 e.printStackTrace();
             } finally {
                 try {
-                    statement.close();
+                    if (statement != null) statement.close();
+                    if (connection != null) connection.close();
                 } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
+                    e.getStackTrace();
                 }
             }
         }
@@ -115,15 +106,10 @@ public class Main2 {
                 e.printStackTrace();
             } finally {
                 try {
-                    if(statement != null)
-                    statement.close();
+                    if (statement != null) statement.close();
+                    if (connection != null) connection.close();
                 } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
+                    e.getStackTrace();
                 }
             }
         }
@@ -163,14 +149,11 @@ public class Main2 {
                 e.printStackTrace();
             } finally {
                 try {
-                    statement.close();
+                    if (rs != null)  rs.close();
+                    if (statement != null) statement.close();
+                    if (connection != null) connection.close();
                 } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
+                    e.getStackTrace();
                 }
             }
         }
